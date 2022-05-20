@@ -1,16 +1,15 @@
 import React from 'react';
-import { Route, Routes  } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import AboutUsPage from '../pages/AboutUsPage';
 import AdminPage from '../pages/AdminPage';
 import AuthPage from '../pages/AuthPage';
+import CartPage from '../pages/CartPage';
 import ContactUsPage from '../pages/ContactUsPage';
+import EditProductPage from '../pages/EditProductPage';
 import HomePage from '../pages/HomePage';
 import NotFoundPage from '../pages/NotFoundPage';
-import PaymentPage from '../pages/PaymentPage';
+import ProductDetailsPage from '../pages/ProductDetailsPage';
 import ProductsPage from '../pages/ProductsPage';
-import EditProductPage from '../pages/EditProductPage';
-import ProductDetailesPage from '../pages/ProductDetailesPage';
-
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -36,17 +35,17 @@ const MainRoutes = () => {
     },
     {
       link: '/products/:id',
-      element: <ProductDetailesPage />,
+      element: <ProductDetailsPage />,
       id: 5,
+    },
+    {
+      link: '/cart',
+      element: <CartPage />,
+      id: 6,
     },
     {
       link: '/contacts',
       element: <ContactUsPage />,
-      id: 6,
-    },
-    {
-      link: '/payment',
-      element: <PaymentPage />,
       id: 7,
     },
     {
@@ -69,7 +68,7 @@ const MainRoutes = () => {
   return (
     <>
       <Routes>
-      {PUBLIC_ROUTES.map((item) => (
+        {PUBLIC_ROUTES.map((item) => (
           <Route path={item.link} element={item.element} key={item.id} />
         ))}
       </Routes>
