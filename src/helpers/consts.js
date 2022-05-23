@@ -10,3 +10,4 @@ export const CART = {
 export const JSON_API_PRODUCTS = 'http://localhost:8000/products';
 
 
+export const API = 'http://35.195.116.215/api/v1/products/';

@@ -11,9 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContextProvider';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Badge } from '@mui/material';
 import { getCountProductsInCart } from '../../helpers/functions';
 import { useCart } from '../../contexts/CartContextProvider';
@@ -21,7 +22,7 @@ import { useCart } from '../../contexts/CartContextProvider';
 const pages = [
   { name: 'ABOUT US', link: '/about', id: 1 },
   { name: 'CONTACT US', link: '/contacts', id: 2 },
-  { name: 'PRODUCTS', link: '/products', id: 3 },
+  { name: 'STORE', link: '/products', id: 3 },
   { name: 'ADMIN', link: '/admin', id: 4 },
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -31,6 +32,7 @@ const Navbar = () => {
     handleLogout,
     user: { email },
   } = useAuth();
+  
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -42,6 +44,14 @@ const Navbar = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
   const { addProductToCart } = useCart();
   const [count, setCount] = React.useState(0);
 
@@ -55,10 +65,10 @@ const Navbar = () => {
         <Toolbar disableGutters>
           <Link to="/" mr={4}>
             <img
-              src="https://images.creativemarket.com/0.1.0/ps/7262323/580/387/m1/fpnw/wm0/creative-luxury-letter-m-logo-design-inspiration-.jpg?1573167622&s=aa7b6fd7b36f6ceff02b3610572ad938"
+              src="https://cassandralavalle.com/wp-content/uploads/2021/10/site-logo.svg"
               alt="123"
-              width={100}
-              height={90}
+              width={250}
+              height={100}
             />
           </Link>
 
@@ -137,9 +147,9 @@ const Navbar = () => {
                   sx={{
                     ml: 'auto',
                     my: 2,
-                    color: 'black',
+                    color:'black',
                     display: 'block',
-                    fontWeight: 'bold',
+                    fontWeight: 'bold'
                   }}
                 >
                   {page.name}
@@ -147,31 +157,40 @@ const Navbar = () => {
               </Link>
             ))}
 
-            <Link to="/cart">
+            
+          </Box>
+
+
+          <Link to="/favourit">
               <Button sx={{ my: 2, color: 'black' }}>
-                <Badge badgeContent={count} color="error">
-                  <ShoppingCartIcon />
+                <Badge badgeContent={count} color="primary" sx={{mr:'10px',mt:'5px'}}>
+                <FavoriteIcon 
+          sx={{fontSize: '30px', mt:'5px', mr:'5px'}}
+         />
                 </Badge>
               </Button>
             </Link>
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            {email ? (
-              <Button
-                sx={{ color: 'black', fontWeight: 'bold' }}
-                onClick={handleLogout}
-              >
-                LOGOUT
+          
+          <Link to="/cart">
+              <Button sx={{ my: 2, color: 'black' }}>
+                <Badge badgeContent={count} color="primary" sx={{mr:'10px',mt:'5px'}}>
+                  <ShoppingCartIcon sx={{fontSize: '30px', }} />
+                </Badge>
               </Button>
-            ) : (
-              <Link to="/auth">
-                <Button sx={{ color: 'black', fontWeight: 'bold' }}>
-                  LOGIN
-                </Button>
-              </Link>
-            )}
-          </Box>
+            </Link>
+
+            <NavLink to="/login">
+            <Button color="inherit" sx={{ color: 'white' }}>
+              Login
+            </Button>
+          </NavLink>
+
+          <NavLink to="/register">
+            <Button color="inherit" sx={{ color: 'white' }}>
+              Register
+            </Button>
+          </NavLink>
+
         </Toolbar>
       </Container>
     </AppBar>

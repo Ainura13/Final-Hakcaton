@@ -64,7 +64,7 @@ const SideBar = () => {
               />
 
               <FormControlLabel
-                value="watch"
+                value="Picture"
                 control={<Radio />}
                 label="watch"
               />
@@ -82,21 +82,21 @@ const SideBar = () => {
           >
             <FormControlLabel value="all" control={<Radio />} label="all" />
             <FormControlLabel
-              value="100"
+              value="250"
               control={<Radio />}
-              label="less than 100$"
+              label="less than 250$"
             />
 
             <FormControlLabel
-              value="600"
+              value="500"
               control={<Radio />}
-              label="less than 600$"
+              label="less than 500$"
             />
 
             <FormControlLabel
-              value="1300"
+              value="1000"
               control={<Radio />}
-              label="less than 1300$"
+              label="less than 1000$"
             />
           </RadioGroup>
         </FormControl>

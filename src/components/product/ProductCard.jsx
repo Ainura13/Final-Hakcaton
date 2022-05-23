@@ -10,6 +10,7 @@ import { useProducts } from '../../contexts/ProductContexProvider';
 import { IconButton } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useCart } from '../../contexts/CartContextProvider';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
@@ -65,6 +66,11 @@ export default function ProductCard({ item }) {
 
         <IconButton onClick={() => addProductToCart(item)}>
           <ShoppingCartIcon
+            color={checkProductInCart(item.id) ? 'primary' : ''}
+          />
+        </IconButton>
+        <IconButton onClick={() => addProductToCart(item)}>
+          <FavoriteIcon
             color={checkProductInCart(item.id) ? 'primary' : ''}
           />
         </IconButton>

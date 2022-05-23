@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Paper } from '@mui/material';
+import  img1  from "../images/img2.jpg";
 
 function Copyright() {
   return <></>;
@@ -22,9 +23,25 @@ const theme = createTheme();
 
 export default function AboutUs() {
   return (
+
+
+
+    
     <ThemeProvider theme={theme}>
       <main>
         {/* Hero unit */}
+
+        <Box sx={{background: '#F5F3EE;', display:'flex', flexWrap:{ xs:'wrap',sm:'nowrap'}}}>
+      <Box sx={{margin: 'auto'}} ><img src={img1} alt="" width='100%'/></Box>
+      <Box sx={{margin: 'auto'}}>
+<Typography sx={{fontSize:{ xs:'20px',sm:'2vw'}, color:"#A9B088", fontWeight: '500', textAlign: 'center'}}>About us</Typography>
+<Typography sx={{fontSize:{ xs:'20px',sm:'1,5vw'}, color:"#A9B088", textAlign: 'center'}}>One brand, many companies, and many, many people – that’s us in a nutshell. Spread all over the world, we have a passion for home furnishing and an inspiring shared vision: to create a better everyday life for the many people. This, together with our straightforward business idea, shared values, and a culture based on the spirit of togetherness, guides us in everything we do.</Typography>
+      </Box>
+    </Box>
+
+
+
+
 
         <Box
           sx={{
@@ -53,26 +70,51 @@ export default function AboutUs() {
                     gutterBottom
                     mr={5}
                   >
-                    Creative and renovate fashion trends
+                    467 Stores in 63 markets
+
                     <Typography
                       variant="h5"
                       color="text.secondary"
                       paragraph
                       sx={{ margin: 'auto', verticalAlign: 'middle' }}
-                    >
-                      Collaboratively administrate empowered markets via
-                      plug-and-play maintain networks. Dynamically usable
-                      procrastinate B2B users after installed base benefits.
-                      Dramatically visualize customer directed convergence
-                      without revolutionary ROI
+                    >The first Store opened in 1958 in Älmhult, Sweden.
+                      
+                    </Typography>
+
+                    <Typography
+                      variant="h5"
+                      color="text.secondary"
+                      paragraph
+                      sx={{ margin: 'auto', verticalAlign: 'middle' }}
+                    >The latest Store to open is Nice St. Isidore, France.
+                      
+                    </Typography>
+
+                    <Typography
+                      variant="h5"
+                      color="text.secondary"
+                      paragraph
+                      sx={{ margin: 'auto', verticalAlign: 'middle' }}
+                      >
+                      Germany has the most Stores in the world
+                    </Typography>
+
+                    <Typography
+                      variant="h5"
+                      color="text.secondary"
+                      paragraph
+                      sx={{ margin: 'auto', verticalAlign: 'middle' }}
+                      >
+                      The biggest Store is Pasay City, Philippines.
                     </Typography>
                   </Typography>
+                  
                 </Grid>
                 <Grid item sm={12} md={6}>
                   <CardMedia
                     component="img"
                     sx={{ width: '100%' }}
-                    image="https://assets.gq.ru/photos/5e0364f8b6b5970008ef35c5/16:9/w_2560%2Cc_limit/cover-tech.jpg"
+                    image="https://gbl-sc9u2-prd-cdn.azureedge.net/-/media/aboutikea/images/about-us/world-map_2400.jpg?rev=4d14992a79224801b027d47222052181"
                     alt="JAWS"
                   />
                 </Grid>
@@ -104,8 +146,8 @@ export default function AboutUs() {
                   <CardMedia
                     component="img"
                     sx={{ width: '100%' }}
-                    image="https://gsmpress.ru/images/articles/144733557817.png"
-                    alt="JAWS"
+                    image="https://www.ikea.com/images/na-perenosnoi-indukcionnoi-paneli-tillreda-stoit-skovoroda-i-e2a847dcd45a993921b7dbaaabf36c22.jpg?f=sg"
+                    alt="img"
                     ml={8}
                   />
                 </Grid>
@@ -119,15 +161,9 @@ export default function AboutUs() {
                     color="text.primary"
                     gutterBottom
                     ml={5}
-                  >
-                    We are marketpress
+                  >Индукционная плита
                     <Typography variant="h5" color="text.secondary" paragraph>
-                      Dynamically procrastinate B2C users after installed base
-                      benefits. Dramatically visualize customer directed
-                      convergence without revolutionary ROI. VISION Credibly
-                      innovate granular internal Grantedly underconstructions
-                      reloaded Interactively procrastinate high-payoff
-                      Completely synergize resource taxing relationships
+                    Индукционная плита нагревается на 50 % быстрее керамической или стеклокерамической при меньшем расходе электроэнергии.
                     </Typography>
                   </Typography>
                 </Grid>
@@ -143,7 +179,7 @@ export default function AboutUs() {
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
+                {/* <Card
                   sx={{
                     height: '100%',
                     display: 'flex',
@@ -156,7 +192,7 @@ export default function AboutUs() {
                       // 16:9
                       pt: '56.25%',
                     }}
-                    image="https://avatars.mds.yandex.net/get-zen_doc/5262999/pub_618bcc2b2543ca3458b691a6_618bcc5b2d5fe804ba2c7860/scale_1200"
+                    image="https://www.ikea.com/ext/ingkadam/m/b24bfac6fe07266/original/20202_dddd01a_11_PH159546.jpg?f=sg"
                     alt="random"
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
@@ -164,11 +200,10 @@ export default function AboutUs() {
                       Name
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
+                    Светодиодные лампы потребляют на 85 % меньше электроэнергии и работают в 20 раз дольше ламп накаливания.
                     </Typography>
                   </CardContent>
-                </Card>
+                </Card> */}
               </Grid>
             ))}
           </Grid>

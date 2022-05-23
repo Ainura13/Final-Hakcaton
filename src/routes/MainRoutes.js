@@ -6,10 +6,13 @@ import AuthPage from '../pages/AuthPage';
 import CartPage from '../pages/CartPage';
 import ContactUsPage from '../pages/ContactUsPage';
 import EditProductPage from '../pages/EditProductPage';
+import FavouritPage from '../pages/FavouritPage';
 import HomePage from '../pages/HomePage';
+import LoginPage from '../pages/LoginPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import ProductDetailsPage from '../pages/ProductDetailsPage';
 import ProductsPage from '../pages/ProductsPage';
+import RegistrationPage from '../pages/RegistrationPage';
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -17,11 +20,6 @@ const MainRoutes = () => {
       link: '/',
       element: <HomePage />,
       id: 1,
-    },
-    {
-      link: '/auth',
-      element: <AuthPage />,
-      id: 2,
     },
     {
       link: '/about',
@@ -63,6 +61,22 @@ const MainRoutes = () => {
       element: <EditProductPage />,
       id: 10,
     },
+    {
+      link: '/favourit',
+      element: <FavouritPage />,
+      id: 11,
+    },
+    {
+      link: '/login',
+      element: <LoginPage />,
+      id: 12,
+    },
+    {
+      link: '/register',
+      element: <RegistrationPage />,
+      id: 13,
+    },
+
   ];
 
   return (

@@ -2,7 +2,7 @@
   "products": [
     {
       "name": "White vase",
-      "description": "Представляем iPhone SE — самый мощный 4-дюймовый смартфон в истории. Чтобы создать его, разработчики взяли за основу полюбившийся дизайн и полностью поменяли содержание. Установили тот же передовой процессор A9, что и на iPhone 6s, и камеру 12 Мп для съёмки невероятных фотографий и видео 4K. А благодаря Live Photos любой ваш снимок буквально оживёт.",
+      "description": "qwertyy",
       "price": 415,
       "picture": "https://images.pexels.com/photos/4207892/pexels-photo-4207892.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "type": "Home decoration",
@@ -10,7 +10,7 @@
     },
     {
       "name": "Picture",
-      "description": "Nokia 230 — телефон, работающий на платформе Series 30+, оснащенный LCD Transmissive-дисплеем, отображающим до 65 тыс. цветов, с диагональю 2.8\" и камерой на 2 Mpx. Оснащен относительно слабым аккумулятором на 1200 mAh, который позволяет аппарату работать до 648 часов в режиме ожидания и до 23 в режиме разговора. Для коммуникации может предложить: Web-браузер, стерео Bluetooth и т.д. Для любителей музыки есть аудио выход на 3.5 мм",
+      "description": "" ,
       "price": 150,
       "picture": "https://images.pexels.com/photos/534172/pexels-photo-534172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "type": "Home decoration",
@@ -18,7 +18,7 @@
     },
     {
       "name": "Picture",
-      "description": "Соотношение сторон телефона: 20:9Размер изображения (дюйм): 1440x3040Количество мегапикселей основной камеры телефона: 108+10+10+12Тип процессора телефона: Exynos 2200Датчики и сенсоры телефона: гироскоп, компас, акселерометр, барометр, Отпечаток пальца (под дисплеем, ультразвуковой), приближение. Дополнительная информация о телефоне: несъемный аккумулятор",
+      "description": "" ,
       "price": 950,
       "picture": "https://images.pexels.com/photos/2249959/pexels-photo-2249959.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "type": "Home decoration",
@@ -26,7 +26,7 @@
     },
     {
       "name": "Chandelier",
-      "description": "Соотношение сторон телефона: 20:9Размер изображения (дюйм): 1440x3200Количество мегапикселей основной камеры телефона: 50+50+50Тип процессора телефона: SM8450 Snapdragon 8 Gen 1Датчики и сенсоры телефона: датчик освещения, Гироскоп, цифровой компас, сканер отпечатка .Дополнительная информация о телефоне: Быстрая зарядка 120 Вт, 100% за 18 минут",
+      "description": "" ,
       "price": 380,
       "picture": "https://images.pexels.com/photos/1370763/pexels-photo-1370763.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "type": "Home decoration",
@@ -34,7 +34,7 @@
     },
     {
       "name": "Chandelier",
-      "description": "Смартфон ARK обладает хорошей камерой на 0.1 Мп. Объем встроенной памяти составляет 0.032 Gb. Под крышкой скрывается аккумулятор ёмкостью 800 мАч",
+      "description": "" ,
       "price": 450,
       "picture": "https://images.pexels.com/photos/1841143/pexels-photo-1841143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "type": "Home decoration",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Vase",
-      "description": "Смартфон Honor обладает хорошей камерой на 48+8+2+2 Мп. Объем встроенной памяти составляет 128 Gb. Оперативной памяти на 4 Gb хватает для стабильной работы системы. Под крышкой скрывается аккумулятор ёмкостью 5000 мАч. Поддержка диапазона 4G даст вам возможность пользоваться быстрым интернетом.",
+      "description": "" ,
       "price": 180,
       "picture": "https://images.pexels.com/photos/879821/pexels-photo-879821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "type": "Home decoration",
@@ -50,7 +50,7 @@
     },
     {
       "name": "Shelves",
-      "description": "Область просмотра на всегда включённом дисплее Retina увеличена примерно на 20% по сравнению с Series 6 — теперь пользоваться часами ещё удобнее",
+      "description": "" ,
       "price": 550,
       "picture": "https://images.pexels.com/photos/4913367/pexels-photo-4913367.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "type": "Home decoration",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Chandelier",
-      "description": "Создатели HUAWEI WATCH GT поставили перед собой задачу выявить максимальный потенциал батареи смарт-часов. Благодаря двойному процессору для носимых устройств Kirin A1 (собственная разработка HUAWEI) и интеллектуальной технологии энергосбережения вы сможете пользоваться смарт-часами круглосуточно до 2 недель без подзарядки",
+      "description": "" ,
       "price": 314,
       "picture": "https://images.pexels.com/photos/1008692/pexels-photo-1008692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "type": "Home decoration",
@@ -66,7 +66,7 @@
     },
     {
       "name": "Picture",
-      "description": "Теперь состояние здоровья контролировать стало легче. В инновационном устройстве Galaxy Watch3 с классическим дизайном гармонично сочетаются функциональность смартфона с новейшей технологией мониторинга здоровья пользователя.",
+      "description": "" ,
       "price": 292,
       "picture": "https://images.pexels.com/photos/3747439/pexels-photo-3747439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "type": "Home decoration",
@@ -74,7 +74,7 @@
     },
     {
       "name": "Blue wall plate",
-      "description": "Умные часы Galaxy Watch Active получили современный премиальный дизайн и умные технологии. Устройство выполнено в тонком и легком корпусе, внутри которого нашлось место для современной начинки и богатого набора функций.",
+      "description": "" ,
       "price": 164,
       "picture": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ed-best-decor-alex-papachristidis-1510956958.jpg?crop=1.00xw:0.666xh;0,0.178xh&resize=980:*",
       "type": "Home decoration",
@@ -82,7 +82,7 @@
     },
     {
       "name": "Blue wall plate",
-      "description": "Яркий AMOLED-экран 1,64 дюйма | Мониторинг здоровья1 и тренировок | GPS",
+      "description": "" ,
       "price": 150,
       "picture": "https://images.unsplash.com/photo-1513716875652-59c99449ee70?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=372",
       "type": "Mirrors",
@@ -90,7 +90,7 @@
     },
     {
       "name": "Lots of mirrors",
-      "description": "Разрешение Xiaomi Amazfit Bip U составляет 320x302 пикселя. Высокое разрешение дисплея умных часов создает изысканный визуальный образ дисплея. Уведомления, сообщения и напоминания будут видны отчетливо при любом освещении.",
+      "description": "" ,
       "price": 200,
       "picture": "https://images.unsplash.com/photo-1595455967759-5f1356993e53?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
       "type": "Mirrors",
@@ -99,7 +99,7 @@
 
     {
       "name": "Decor mirror",
-      "description": "Системы Dell Gaming специально спроектированы с учетом уникальных высоких требований игровой аудитории. Они оснащаются новейшими процессорами и мощными выделенными графическими адаптерами, чтобы сделать каждую игру еще насыщеннее и реалистичнее.",
+      "description": "" ,
       "price": 300,
       "picture": "https://images.unsplash.com/photo-1612392549429-a874f09c65f1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=342",
       "type": "Mirrors",
@@ -107,7 +107,7 @@
     },
     {
       "name": "Round mirror",
-      "description": "Процессор Intel Core i5 сделает любую вашу работу невероятно быстрой. Объем оперативной памяти составляет 12 Gb. Ноутбук ASUS X540UB c разрешением в 1920x1080 отлично подойдет для работы или просмотра любимых фильмов и сериалов. А с видеокартой NVIDIA GeForce MX110 изображение будет всегда четким и красивым. С объемом жесткого диска в 240 Gb вам всегда хватит места, чтобы сохранить важные документы. Вы можете пользоваться Wi-Fi в любом удобном для вас месте.",
+      "description": "" ,
       "price": 500,
       "picture": "https://images.unsplash.com/photo-1556020685-ae41abfc9365?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
       "type": "Mirrors",
@@ -115,7 +115,7 @@
     },
     {
       "name": "Only mirror",
-      "description": "оутбук ASUS, модель VivoBook S15 S532FA (S532FA-SB77) оснащён всем необходимым для быстрой и комфортной работы. Быстродействие обеспечивает 4-ядерный процессор Intel Core i7-8565U с частотой работы 1,8 ГГц (до 4,6 ГГц в режиме TurboBoost) и 8 ГБ оперативной памяти. Для хранения данных установлен накопитель 512 ГБ SSD, присутствует кардридер . Видео на 15,6\" IPS экран с разрешением 1920x1080 точек выводит графический адаптер Intel HD Graphics 630. ",
+      "description": "" ,
       "price": 600,
       "picture": "https://images.pexels.com/photos/5793655/pexels-photo-5793655.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "type": "Mirrors",
@@ -123,7 +123,7 @@
     },
     {
       "name": "Dark mirror",
-      "description": "16GB, 256GB SSD, Intel® Iris® Xe Graphics, 15.6\" IPS FULL HD (1920x1080), WiFi, BT, Cam, DOS, Eng-Rus",
+      "description": "" ,
       "price": 300,
       "picture": "https://img.freepik.com/free-photo/modern-luxury-authentic-dining-room-interior-design-with-picture-frame_53876-129841.jpg?t=st=1653029814~exp=1653030414~hmac=62c0f99be74a5b0600ec411be6baa94203aa2820d86f60304bdfa59d5ceeef6b&w=996",
       "type": "Mirrors",
@@ -131,7 +131,7 @@
     },
     {
       "name": "Only mirror",
-      "description": "С появлением чипа M1 MacBook Pro 13 дюймов становится невероятно про­из­во­ди­тель­ным и быстрым. Мощность центрального процессора выросла до 2,8 раза. Скорость обработки графики — до 5 раз. Благодаря нашей передовой системе Neural Engine скорость машинного обучения возросла до 11 раз. При этом MacBook Pro работает без подзарядки до 20 часов — дольше, чем любой другой Mac. Наш самый популярный ноутбук класса Pro выходит на совершенно новый уровень.",
+      "description": "" ,
       "price": 400,
       "picture": "https://images.pexels.com/photos/2207894/pexels-photo-2207894.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "type": "Mirrors",
