@@ -66,6 +66,8 @@ export default function Cart() {
             <StyledTableCell align="right">Type</StyledTableCell>
             <StyledTableCell align="right">Description</StyledTableCell>
             <StyledTableCell align="right">Price</StyledTableCell>
+            <StyledTableCell align="right">Count</StyledTableCell>
+            <StyledTableCell align="right">SubPrice</StyledTableCell>
             <StyledTableCell align="right">-</StyledTableCell>
           </TableRow>
         </TableHead>
@@ -105,6 +107,8 @@ export default function Cart() {
           ))}
         </TableBody>
       </Table>
+
+      <Button onClick={cartCleaner}> BUY NOW FOR {cart?.totalPrice} $</Button>
     </TableContainer>
   );
 }

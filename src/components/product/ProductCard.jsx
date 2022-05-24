@@ -71,7 +71,7 @@ export default function ProductCard({ item }) {
         </IconButton>
         <IconButton onClick={() => addProductToCart(item)}>
           <FavoriteIcon
-            color={checkProductInCart(item.id) ? 'primary' : ''}
+          // color={checkProductInCart(item.id) ? 'primary' : ''}
           />
         </IconButton>
       </CardActions>
