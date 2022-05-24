@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AboutUsPage from '../pages/AboutUsPage';
+import ActivationPage from '../pages/ActivationPage';
 import AdminPage from '../pages/AdminPage';
-import AuthPage from '../pages/AuthPage';
 import CartPage from '../pages/CartPage';
 import ContactUsPage from '../pages/ContactUsPage';
 import EditProductPage from '../pages/EditProductPage';
@@ -20,6 +20,11 @@ const MainRoutes = () => {
       link: '/',
       element: <HomePage />,
       id: 1,
+    },
+    {
+      link: '/activation',
+      element: <ActivationPage />,
+      id: 2,
     },
     {
       link: '/about',

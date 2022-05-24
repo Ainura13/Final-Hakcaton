@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContextProvider';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -28,10 +28,10 @@ const pages = [
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navbar = () => {
-  const {
-    handleLogout,
-    user: { email },
-  } = useAuth();
+
+  const { user, checkAuth, logout } = useAuth();
+  const navigate = useNavigate();
+
   
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -54,6 +54,12 @@ const handleCloseUserMenu = () => {
 
   const { addProductToCart } = useCart();
   const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (localStorage.getItem('token')) {
+      checkAuth();
+    }
+  }, [])
 
   React.useEffect(() => {
     setCount(getCountProductsInCart);
@@ -178,18 +184,32 @@ const handleCloseUserMenu = () => {
                 </Badge>
               </Button>
             </Link>
-
-            <NavLink to="/login">
-            <Button color="inherit" sx={{ color: 'white' }}>
-              Login
+            {user ? (
+            <Button
+              color="inherit"
+              sx={{ color: 'white' }}
+              onClick={() => {
+                logout();
+                navigate('/login');
+              }}
+            >
+              Logout
             </Button>
-          </NavLink>
+          ) : (
+            <>
+              <NavLink to="/login">
+                <Button color="inherit" sx={{ color: 'white' }}>
+                  Login
+                </Button>
+              </NavLink>
 
-          <NavLink to="/register">
-            <Button color="inherit" sx={{ color: 'white' }}>
-              Register
-            </Button>
-          </NavLink>
+              <NavLink to="/register">
+                <Button color="inherit" sx={{ color: 'white' }}>
+                  Register
+                </Button>
+              </NavLink>
+            </>
+          )}
 
         </Toolbar>
       </Container>

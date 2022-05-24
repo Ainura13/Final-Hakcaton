@@ -39,6 +39,14 @@ export default function ProductCard({ item }) {
         >
           {item.price}$
         </Typography>
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          sx={{ color: 'green', fontWeight: '700' }}
+        >
+          {item.madeIn}
+        </Typography>
 
         <Typography
           variant="body2"
