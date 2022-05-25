@@ -33,6 +33,7 @@ const ProductContexProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const location = useLocation();
   const navigate = useNavigate();
+
   const [page, setPage] = useState(1)
   
 
@@ -43,6 +44,7 @@ const ProductContexProvider = ({ children }) => {
       `${API}products/`
     );
     
+
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
       payload: data.results,
@@ -52,10 +54,12 @@ const ProductContexProvider = ({ children }) => {
   };
 
   const getCategory = async () => {
+
     const { data } = await axios(
       `${API}category/`
     );
     // console.log(data)
+
     dispatch({
       type: ACTIONS.GET_CATEGORY,
       payload: data,
@@ -65,6 +69,7 @@ const ProductContexProvider = ({ children }) => {
   const addProduct = async (newProduct) => {
     let token = JSON.parse(localStorage.getItem('token'));
     const Authorization = `Bearer ${token.access}`;
+
     const config = {
       headers: { 'Content-Type':'multipart/form-data', 'Authorization': `Bearer ${token.access}`}
     }
@@ -79,21 +84,25 @@ const ProductContexProvider = ({ children }) => {
     
     // console.log(newProducts)
     await axios.post(`${API}products/`, newProducts, config);
+
     getProducts();
   };
   
 
   const getProductDetails = async (id) => {
+
     
     const { data } = await axios(`${API}products/${id}/`);
     console.log(data);
+
     dispatch({
       type: ACTIONS.GET_PRODUCT_DETAILS,
-      payload: data,
+      payload: data.results,
     });
   };
 
   const saveEditedProduct = async (newProduct) => {
+
     let token = JSON.parse(localStorage.getItem('token'));
     const config = {
       headers: {'Content-Type':'multipart/form-data', 'Authorization': `Bearer ${token.access}` }
@@ -109,10 +118,12 @@ const ProductContexProvider = ({ children }) => {
     console.log(id);
 
     await axios.patch(`${API}products/${id}/`, newEditProducts, config);
+
     getProducts();
   };
 
   const deleteProduct = async (id) => {
+
     let token = JSON.parse(localStorage.getItem('token'));
     const config = {
       headers: {'Content-Type':'multipart/form-data', 'Authorization': `Bearer ${token.access}` }
@@ -146,6 +157,31 @@ const ProductContexProvider = ({ children }) => {
       //   })
       // }
 
+
+  const searchFilter = async (value) => {
+    const { data } = await axios(`${API}search/?q=${value}`);
+
+    dispatch({
+      type: ACTIONS.GET_PRODUCTS,
+      payload: data,
+    });
+  };
+
+  // const toogleLike = async (id) => {
+  //   let token = JSON.parse(localStorage.getItem('token'));
+  //   const Authorization = `Bearer ${token.access}`;
+
+  //   const config = {
+  //     headers: {
+  //       'Content-Type': 'multipart/form-data',
+  //       Authorization: `Bearer ${token.access}`,
+  //     },
+  //   };
+
+  //   await axios(`${JSON_API_PRODUCTS}${id}/toggle_like/`, config);
+  //   getProducts();
+  // };
+
   const values = {
     products: state.products,
     productDetails: state.productDetails,
@@ -156,9 +192,11 @@ const ProductContexProvider = ({ children }) => {
     getProductDetails,
     deleteProduct,
     saveEditedProduct,
+
     // fetchByParams,
     // searchFilter,
     getCategory
+
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>

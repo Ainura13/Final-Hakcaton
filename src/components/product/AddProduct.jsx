@@ -1,9 +1,12 @@
+
 import { Box, Button, FormControl, Input, InputLabel, Menu, MenuItem, Select, TextField, Typography } from '@mui/material';
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProducts } from '../../contexts/ProductContexProvider';
 
 const AddProduct = () => {
+
   const { addProduct, getProducts, categorys, getCategory  } = useProducts();
   const navigate = useNavigate();
   useEffect(() => {
@@ -15,6 +18,7 @@ useEffect(() => {
 }, []);
 
 // console.log(categorys);
+
   const [product, setProduct] = useState({
     name: '',
     description: '',
@@ -103,21 +107,25 @@ useEffect(() => {
                 />
       
       {/* {categorys ? (
+
             categorys.map((item) => (
               <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
+
           value={item.name}
           label="Age"
           onChange={handleInp}
         >
           <MenuItem value={item.name}>{item.name}</MenuItem>
+
         </Select>
             ))
           ) : (
             <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
+
           value=''
           label="Age"
           onChange={handleInp}
@@ -167,6 +175,7 @@ useEffect(() => {
       >
         CREATE PRODUCT
       </Button>
+
     </Box>
     // </Box>
   );
