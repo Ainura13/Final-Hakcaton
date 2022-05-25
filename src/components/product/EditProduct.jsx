@@ -20,6 +20,7 @@ const EditProduct = () => {
   }, []);
 
   console.log(product);
+  console.log(id);
 
   const handleInp = (e) => {
     let obj = {
@@ -70,10 +71,19 @@ const EditProduct = () => {
       <TextField
         fullWidth
         id="outlined-basic"
-        label="Type"
+        label="Category"
         variant="outlined"
-        name="type"
-        value={product.type || ''}
+        name="category"
+        value={product.category || ''}
+        onChange={handleInp}
+      />
+      <TextField
+        fullWidth
+        id="outlined-basic"
+        label="MadeIn"
+        variant="outlined"
+        name="madeIn"
+        value={product.madeIn || ''}
         onChange={handleInp}
       />
       <Button
