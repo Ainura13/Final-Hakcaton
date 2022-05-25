@@ -6,7 +6,6 @@ import SideBar from '../components/product/SideBar';
 const ProductsPage = () => {
   return (
     <Box p={5}>
-      ProductsPage
       <Grid container spacing={3}>
         <ProductList />
         <SideBar />

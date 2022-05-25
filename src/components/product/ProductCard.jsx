@@ -11,6 +11,7 @@ import { IconButton } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useCart } from '../../contexts/CartContextProvider';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
@@ -38,6 +39,14 @@ export default function ProductCard({ item }) {
           sx={{ color: 'green', fontWeight: '700' }}
         >
           {item.price}$
+        </Typography>
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          sx={{ color: 'green', fontWeight: '700' }}
+        >
+          {item.madeIn}
         </Typography>
 
         <Typography
@@ -69,11 +78,11 @@ export default function ProductCard({ item }) {
             color={checkProductInCart(item.id) ? 'primary' : ''}
           />
         </IconButton>
-        <IconButton onClick={() => addProductToCart(item)}>
-          <FavoriteIcon
-          // color={checkProductInCart(item.id) ? 'primary' : ''}
-          />
-        </IconButton>
+        {/* <ThumbUpAltIcon
+          sx={{ cursor: 'pointer' }}
+          onClick={() => toogleLike(item.id)}
+        />
+        {item.likes} */}
       </CardActions>
     </Card>
   );

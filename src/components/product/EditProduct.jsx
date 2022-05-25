@@ -70,10 +70,19 @@ const EditProduct = () => {
       <TextField
         fullWidth
         id="outlined-basic"
-        label="Type"
+        label="Category"
         variant="outlined"
-        name="type"
-        value={product.type || ''}
+        name="category"
+        value={product.category || ''}
+        onChange={handleInp}
+      />
+      <TextField
+        fullWidth
+        id="outlined-basic"
+        label="MadeIn"
+        variant="outlined"
+        name="madeIn"
+        value={product.category || ''}
         onChange={handleInp}
       />
       <Button

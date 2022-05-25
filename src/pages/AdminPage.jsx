@@ -4,7 +4,6 @@ import AddProduct from '../components/product/AddProduct';
 const AdminPage = () => {
   return (
     <div>
-      AdminPage
       <AddProduct />
     </div>
   );

@@ -125,7 +125,13 @@ const Navbar = () => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          ></Typography>
+          >
+            <img
+              id="logo"
+              src="https://demo.xpeedstudio.com/marketo/wp-content/uploads/2020/06/logo_3.png"
+              alt=""
+            />
+          </Typography>
           <Box
             sx={{
               justifyContent: 'center',
