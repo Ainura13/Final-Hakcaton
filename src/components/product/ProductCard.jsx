@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useProducts } from '../../contexts/ProductContexProvider';
 import { IconButton } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -16,8 +16,13 @@ import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
 
-  const { deleteProduct } = useProducts();
+  const {id} = useParams();
+  const { deleteProduct, getProductDetails } = useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
+
+  React.useEffect(()=>{
+    getProductDetails(id)
+  }, [])
 
   return (
     <Card sx={{ m: '1rem', maxWidth: 300 }}>
@@ -26,8 +31,10 @@ export default function ProductCard({ item }) {
         height="400"
         image={item.picture}
         alt={item.name}
+      onClick={()=>navigate(`/products/${item.id}`)}
       />
-      <CardContent>
+      <CardContent 
+      >
         <Typography gutterBottom variant="h5" component="div">
           {item.name}
         </Typography>

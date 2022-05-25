@@ -8,7 +8,7 @@ const ProductsPage = () => {
     <Box p={5}>
       <Grid container spacing={3}>
         <ProductList />
-        <SideBar />
+        {/* <SideBar /> */}
       </Grid>
     </Box>
   );
