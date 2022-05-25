@@ -32,7 +32,6 @@ const Navbar = () => {
     handleLogout,
     user: { email },
   } = useAuth();
-  
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -48,7 +47,7 @@ const Navbar = () => {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-const handleCloseUserMenu = () => {
+  const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
@@ -126,13 +125,7 @@ const handleCloseUserMenu = () => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            <img
-              id="logo"
-              src="https://demo.xpeedstudio.com/marketo/wp-content/uploads/2020/06/logo_3.png"
-              alt=""
-            />
-          </Typography>
+          ></Typography>
           <Box
             sx={{
               justifyContent: 'center',
@@ -147,39 +140,42 @@ const handleCloseUserMenu = () => {
                   sx={{
                     ml: 'auto',
                     my: 2,
-                    color:'black',
+                    color: 'black',
                     display: 'block',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
                   }}
                 >
                   {page.name}
                 </Button>
               </Link>
             ))}
-
-            
           </Box>
 
-
           <Link to="/favourit">
-              <Button sx={{ my: 2, color: 'black' }}>
-                <Badge badgeContent={count} color="primary" sx={{mr:'10px',mt:'5px'}}>
-                <FavoriteIcon 
-          sx={{fontSize: '30px', mt:'5px', mr:'5px'}}
-         />
-                </Badge>
-              </Button>
-            </Link>
-          
-          <Link to="/cart">
-              <Button sx={{ my: 2, color: 'black' }}>
-                <Badge badgeContent={count} color="primary" sx={{mr:'10px',mt:'5px'}}>
-                  <ShoppingCartIcon sx={{fontSize: '30px', }} />
-                </Badge>
-              </Button>
-            </Link>
+            <Button sx={{ my: 2, color: 'black' }}>
+              <Badge
+                badgeContent={count}
+                color="primary"
+                sx={{ mr: '10px', mt: '5px' }}
+              >
+                <FavoriteIcon sx={{ fontSize: '30px', mt: '5px', mr: '5px' }} />
+              </Badge>
+            </Button>
+          </Link>
 
-            <NavLink to="/login">
+          <Link to="/cart">
+            <Button sx={{ my: 2, color: 'black' }}>
+              <Badge
+                badgeContent={count}
+                color="primary"
+                sx={{ mr: '10px', mt: '5px' }}
+              >
+                <ShoppingCartIcon sx={{ fontSize: '30px' }} />
+              </Badge>
+            </Button>
+          </Link>
+
+          <NavLink to="/login">
             <Button color="inherit" sx={{ color: 'white' }}>
               Login
             </Button>
@@ -190,7 +186,6 @@ const handleCloseUserMenu = () => {
               Register
             </Button>
           </NavLink>
-
         </Toolbar>
       </Container>
     </AppBar>
