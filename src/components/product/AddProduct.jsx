@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useProducts } from '../../contexts/ProductContexProvider';
 
 const AddProduct = () => {
-  const { addProduct, getProducts, categorys,getCategory  } = useProducts();
+  const { addProduct, getProducts, categorys, getCategory  } = useProducts();
   const navigate = useNavigate();
   useEffect(() => {
     getProducts();
@@ -14,7 +14,7 @@ useEffect(() => {
   getCategory();
 }, []);
 
-console.log(categorys);
+// console.log(categorys);
   const [product, setProduct] = useState({
     name: '',
     description: '',
@@ -23,7 +23,7 @@ console.log(categorys);
     category: '',
     madeIn: '',
   });
-
+  console.log(product)
   const handleInp = (e) => {
     if (e.target.name === 'price') {
       let obj = {
@@ -47,17 +47,17 @@ console.log(categorys);
 }
 
   return (
-    <Box
-    className='bgImage' sx={{
-    height: '70vh' ,
-backgroundImage: `url("https://images.unsplash.com/photo-1524055988636-436cfa46e59e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"), linear-gradient(#fff,#0000)`,
-    position: 'relative', 
-    color: 'white',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'right',
-    backgroundAttachment: 'fixed',
-    opacity: '0.8'}}>
+//     <Box
+//     className='bgImage' sx={{
+//     height: '70vh' ,
+// backgroundImage: `url("https://images.unsplash.com/photo-1524055988636-436cfa46e59e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"), linear-gradient(#fff,#0000)`,
+//     position: 'relative', 
+//     color: 'white',
+//     backgroundSize: 'cover',
+//     backgroundRepeat: 'no-repeat',
+//     backgroundPosition: 'right',
+//     backgroundAttachment: 'fixed',
+//     opacity: '0.8'}}>
 
     <Box sx={{ width: '50vw', margin: '10vh auto' }}>
     <Typography
@@ -95,44 +95,44 @@ backgroundImage: `url("https://images.unsplash.com/photo-1524055988636-436cfa46e
         onChange={handleInp}
         sx={{mb: 2}}
       />
-      <Box sx={{ minWidth: 120 }}>
+     
       <Input
                 type='file'
                 onChange={handleInpFile}
                 sx={{mb: 2}}
                 />
-      </Box>
+      
       {/* {categorys ? (
             categorys.map((item) => (
               <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={item}
+          value={item.name}
           label="Age"
           onChange={handleInp}
         >
-          <MenuItem value={item}>{item}</MenuItem>
+          <MenuItem value={item.name}>{item.name}</MenuItem>
         </Select>
             ))
           ) : (
             <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={categorys}
+          value=''
           label="Age"
           onChange={handleInp}
         >
-          <MenuItem value={categorys}>No categorys</MenuItem>
+          <MenuItem value=''>No categorys</MenuItem>
         </Select>
           )} */}
-     <Box sx={{ minWidth: 120, mb: 2 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Category</InputLabel>
+    
+      
       <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value=''
-          label="Age"
+          value={product['category']}
+          label="category"
+          name='category'
           onChange={handleInp}
         >
           {categorys ? (
@@ -140,12 +140,10 @@ backgroundImage: `url("https://images.unsplash.com/photo-1524055988636-436cfa46e
               <MenuItem value={item.name}>{item.name}</MenuItem>
             ))
           ) : (
-            <MenuItem value={null}>No category</MenuItem>
+            <MenuItem value=''>No category</MenuItem>
           )}
-          
         </Select>
-        </FormControl>
-        </Box>
+       
         
       <TextField
         fullWidth
@@ -170,7 +168,7 @@ backgroundImage: `url("https://images.unsplash.com/photo-1524055988636-436cfa46e
         CREATE PRODUCT
       </Button>
     </Box>
-    </Box>
+    // </Box>
   );
 };
 

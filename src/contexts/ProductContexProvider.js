@@ -34,6 +34,7 @@ const ProductContexProvider = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [page, setPage] = useState(1)
+  
 
   
 
@@ -41,6 +42,7 @@ const ProductContexProvider = ({ children }) => {
     const { data } = await axios(
       `${API}products/`
     );
+    
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
       payload: data.results,
@@ -53,7 +55,7 @@ const ProductContexProvider = ({ children }) => {
     const { data } = await axios(
       `${API}category/`
     );
-    console.log(data)
+    // console.log(data)
     dispatch({
       type: ACTIONS.GET_CATEGORY,
       payload: data,
@@ -63,80 +65,86 @@ const ProductContexProvider = ({ children }) => {
   const addProduct = async (newProduct) => {
     let token = JSON.parse(localStorage.getItem('token'));
     const Authorization = `Bearer ${token.access}`;
-
-
     const config = {
-      headers: {'Content-Type':'multipart/form-data','Authorization': `Bearer ${token.access}`}
+      headers: { 'Content-Type':'multipart/form-data', 'Authorization': `Bearer ${token.access}`}
     }
-    console.log(config)
+    // console.log(config)
     let newProducts = new FormData()
-    newProducts.append('category', newProducts.category)
-    newProducts.append('name', newProducts.name)
-    newProducts.append('price', newProducts.price)
-    newProducts.append('description', newProducts.description)
-    newProducts.append('made_in', newProducts.made_in)
-    newProducts.append('image', newProducts.image)
-
-    await axios.post(`${API}products/`, newProduct, config);
+    newProducts.append('category', newProduct.category)
+    newProducts.append('name', newProduct.name)
+    newProducts.append('price', newProduct.price)
+    newProducts.append('description', newProduct.description)
+    newProducts.append('made_in', newProduct.made_in)
+    newProducts.append('image', newProduct.image)
+    
+    // console.log(newProducts)
+    await axios.post(`${API}products/`, newProducts, config);
     getProducts();
   };
   
+
   const getProductDetails = async (id) => {
-    const { data } = await axios(`${API}products/${id}`);
+    
+    const { data } = await axios(`${API}products/${id}/`);
+    console.log(data);
     dispatch({
       type: ACTIONS.GET_PRODUCT_DETAILS,
-      payload: data.results,
+      payload: data,
     });
   };
 
   const saveEditedProduct = async (newProduct) => {
+    let token = JSON.parse(localStorage.getItem('token'));
     const config = {
-      headers: {'Content-Type':'multipart/form-data'}
+      headers: {'Content-Type':'multipart/form-data', 'Authorization': `Bearer ${token.access}` }
     }
 
     let newEditProducts = new FormData()
-    newEditProducts.append('category', newProduct.category)
     newEditProducts.append('name', newProduct.name)
     newEditProducts.append('price', newProduct.price)
     newEditProducts.append('description', newProduct.description)
     newEditProducts.append('made_in', newProduct.madeIn)
-    newEditProducts.append('image', newProduct.image)
     newEditProducts.append('id', newProduct.id)
     let id = newEditProducts.get('id')
+    console.log(id);
 
-    await axios.patch(`${API}products/${id}`, newEditProducts, config);
+    await axios.patch(`${API}products/${id}/`, newEditProducts, config);
     getProducts();
   };
 
   const deleteProduct = async (id) => {
-    await axios.delete(`${API}products/${id}`);
+    let token = JSON.parse(localStorage.getItem('token'));
+    const config = {
+      headers: {'Content-Type':'multipart/form-data', 'Authorization': `Bearer ${token.access}` }
+    }
+    await axios.delete(`${API}products/${id}`, config);
     getProducts();
   };
 
-  //filter
-  const fetchByParams = async (query, value) => {
+  // //filter
+  // const fetchByParams = async (query, value) => {
 
-    if (value === 'all') {
-      getProducts()
-    } else {
-      const { data } = await axios(`${API}filter/?${query}=${value}`)
+  //   if (value === 'all') {
+  //     getProducts()
+  //   } else {
+  //     const { data } = await axios(`${API}filter/?${query}=${value}`)
             
-      dispatch({
-        type: ACTIONS.GET_PRODUCTS,
-        payload: data
-      })
-    }
-      }
+  //     dispatch({
+  //       type: ACTIONS.GET_PRODUCTS,
+  //       payload: data
+  //     })
+  //   }
+  //     }
     
-      const searchFilter = async(value)=>{
+      // const searchFilter = async(value)=>{
       
-        const { data } = await axios(`${API}search/?q=${value}`)
+      //   const { data } = await axios(`${API}search/?q=${value}`)
       
-        dispatch({
-          type: ACTIONS.GET_PRODUCTS,
-          payload: data
-        })
-      }
+      //   dispatch({
+      //     type: ACTIONS.GET_PRODUCTS,
+      //     payload: data
+      //   })
+      // }
 
   const values = {
     products: state.products,
@@ -148,8 +156,8 @@ const ProductContexProvider = ({ children }) => {
     getProductDetails,
     deleteProduct,
     saveEditedProduct,
-    fetchByParams,
-    searchFilter,
+    // fetchByParams,
+    // searchFilter,
     getCategory
   };
   return (

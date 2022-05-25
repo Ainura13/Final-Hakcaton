@@ -20,6 +20,7 @@ const EditProduct = () => {
   }, []);
 
   console.log(product);
+  console.log(id);
 
   const handleInp = (e) => {
     let obj = {
@@ -82,7 +83,7 @@ const EditProduct = () => {
         label="MadeIn"
         variant="outlined"
         name="madeIn"
-        value={product.category || ''}
+        value={product.madeIn || ''}
         onChange={handleInp}
       />
       <Button
