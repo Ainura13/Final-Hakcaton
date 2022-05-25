@@ -83,7 +83,9 @@ const EditProduct = () => {
         label="MadeIn"
         variant="outlined"
         name="madeIn"
+
         value={product.madeIn || ''}
+
         onChange={handleInp}
       />
       <Button
