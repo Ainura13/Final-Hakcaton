@@ -3,19 +3,17 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useAuth, authContext } from '../../contexts/AuthContextProvider';
-
+import { useAuth } from '../../contexts/AuthContextProvider';
 
 function Copyright(props) {
+    
+    
   return (
     <Typography
       variant="body2"
@@ -33,27 +31,19 @@ function Copyright(props) {
   );
 }
 
+
+
 const theme = createTheme();
 
-export default function Registration() {
-  //   const handleSubmit = (event) => {
-  //     event.preventDefault();
-  //     const data = new FormData(event.currentTarget);
-  //     console.log({
-  //       email: data.get('email'),
-  //       password: data.get('password'),
-  //     });
-  //   };
+export default function Activation() {
+    const { activation } = useAuth();
+    const [ code, setCode ] = React.useState()
 
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const { register, error } = useAuth();
-
-  function handleRegister(email, password) {
-    register({ email, password });
-  }
-
-
+    const handleInp = (e) => {
+         const code = e.target.value;
+         setCode(code)
+    }
+console.log(code);
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -70,7 +60,7 @@ export default function Registration() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Registration
+            ACTIVATION
           </Typography>
           <Box
             // component="form"
@@ -78,53 +68,27 @@ export default function Registration() {
             noValidate
             sx={{ mt: 1 }}
           >
-            {error ? <Typography>{error}</Typography> : null}
             <TextField
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="activation"
+              label="Activation Code"
+              name="code"
+              autoComplete="code"
               autoFocus
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
+              onChange={handleInp}
+              value={code}
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-    
             <Button
               //   type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={() => handleRegister(email, password)}
+              onClick={()=>activation(code)}
             >
-              Register
+              Activation Code
             </Button>
-     
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />

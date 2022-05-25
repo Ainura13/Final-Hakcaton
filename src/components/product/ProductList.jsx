@@ -6,21 +6,22 @@ import { useProducts } from '../../contexts/ProductContexProvider';
 import ProductCard from './ProductCard';
 
 const ProductList = () => {
-  const { products, getProducts } = useProducts();
+  const { products, getProducts} = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     getProducts();
   }, []);
 
+
   useEffect(() => {
     getProducts();
-    setPage(1);
   }, [searchParams]);
 
+  
   const [page, setPage] = useState(1);
-  const itemsPerPage = 6;
-  const count = Math.ceil(products.length / itemsPerPage);
+  // const itemsPerPage = 6;
+  // const count = Math.ceil(products.length / itemsPerPage);
 
   const handleChange = (e, p) => {
     console.log(p);
@@ -28,11 +29,11 @@ const ProductList = () => {
   };
   // pagination
 
-  function currentData() {
-    const begin = (page - 1) * itemsPerPage;
-    const end = begin + itemsPerPage;
-    return products.slice(begin, end);
-  }
+  // function currentData() {
+  //   const begin = (page - 1) * itemsPerPage;
+  //   const end = begin + itemsPerPage;
+  //   return products.slice(begin, end);
+  // }
 
   return (
     <>
@@ -46,7 +47,7 @@ const ProductList = () => {
           }}
         >
           {products ? (
-            currentData().map((item) => (
+            products.map((item) => (
               <ProductCard item={item} key={item.id} />
             ))
           ) : (
@@ -55,7 +56,7 @@ const ProductList = () => {
         </Box>
 
         <Pagination
-          count={count}
+          // count={count}
           variant="outlined"
           shape="rounded"
           onChange={handleChange}
