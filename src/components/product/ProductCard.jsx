@@ -19,16 +19,14 @@ export default function ProductCard({ item }) {
   const { deleteProduct, getProductDetails } = useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
 
-  React.useEffect(()=>{
-    getProductDetails(id)
-  }, [])
+  
 
   return (
     <Card sx={{ m: '1rem', maxWidth: 300 }}>
       <CardMedia
         component="img"
         height="400"
-        image={item.picture}
+        image={item.image}
         alt={item.name}
       onClick={()=>navigate(`/products/${item.id}`)}
       />

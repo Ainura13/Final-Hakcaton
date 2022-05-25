@@ -14,7 +14,6 @@ const ProductDetails = () => {
         getProductDetails(id);
     }, []);
 
-    console.log(productDetails);
 
     return (
         <Paper sx={{ m: 6 }} elevation={24}>

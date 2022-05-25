@@ -167,15 +167,7 @@ const handleCloseUserMenu = () => {
           </Box>
 
 
-          <Link to="/favourit">
-              <Button sx={{ my: 2, color: 'black' }}>
-                <Badge badgeContent={count} color="primary" sx={{mr:'10px',mt:'5px'}}>
-                <FavoriteIcon 
-          sx={{fontSize: '30px', mt:'5px', mr:'5px'}}
-         />
-                </Badge>
-              </Button>
-            </Link>
+         
           
           <Link to="/cart">
               <Button sx={{ my: 2, color: 'black' }}>

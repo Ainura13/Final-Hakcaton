@@ -34,22 +34,36 @@ const ProductContexProvider = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [page, setPage] = useState(1)
-  
+  const [count, setCount] = useState(1)
+   
 
   
+
+  // const getProducts = async () => {
+  //   const { data } = await axios(
+  //     `${API}products/`
+  //   );
+    
+  //   dispatch({
+  //     type: ACTIONS.GET_PRODUCTS,
+  //     payload: data.results,
+  //   });
+  //   // console.log(data);
+  //   // console.log(data.results)
+  // };
 
   const getProducts = async () => {
-    const { data } = await axios(
-      `${API}products/`
-    );
-    
+    // let loc=location.pathname
+    // let url = `${loc}?page=${page}`
+    // navigate(url)
+    const { data } = await axios(`${API}products/?page=${page}`)
+    setCount(Math.ceil(data.count / 6))
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
-      payload: data.results,
-    });
-    // console.log(data);
-    // console.log(data.results)
-  };
+      payload: data
+    })
+    console.log(data);
+  }
 
   const getCategory = async () => {
     const { data } = await axios(
@@ -89,7 +103,7 @@ const ProductContexProvider = ({ children }) => {
     console.log(data);
     dispatch({
       type: ACTIONS.GET_PRODUCT_DETAILS,
-      payload: data,
+      payload: data
     });
   };
 
@@ -108,7 +122,7 @@ const ProductContexProvider = ({ children }) => {
     let id = newEditProducts.get('id')
     console.log(id);
 
-    await axios.patch(`${API}products/${id}/`, newEditProducts, config);
+    await axios.patch(`${API}products/${newProduct.id}/`, newEditProducts, config);
     getProducts();
   };
 
@@ -121,30 +135,36 @@ const ProductContexProvider = ({ children }) => {
     getProducts();
   };
 
-  // //filter
-  // const fetchByParams = async (query, value) => {
+  
 
-  //   if (value === 'all') {
-  //     getProducts()
-  //   } else {
-  //     const { data } = await axios(`${API}filter/?${query}=${value}`)
+  //filter
+  const fetchByParams = async (query, value) => {
+
+    if (value === 'all') {
+      getProducts()
+    } else {
+      const { data } = await axios(`${API}filter/?${query}=${value}`)
             
-  //     dispatch({
-  //       type: ACTIONS.GET_PRODUCTS,
-  //       payload: data
-  //     })
-  //   }
-  //     }
+      dispatch({
+        type: ACTIONS.GET_PRODUCTS,
+        payload: data
+      })
+    }
+      }
+
+
+      //Search
+
     
-      // const searchFilter = async(value)=>{
+      const searchFilter = async(value)=>{
       
-      //   const { data } = await axios(`${API}search/?q=${value}`)
+        const { data } = await axios(`${API}search/?q=${value}`)
       
-      //   dispatch({
-      //     type: ACTIONS.GET_PRODUCTS,
-      //     payload: data
-      //   })
-      // }
+        dispatch({
+          type: ACTIONS.GET_PRODUCTS,
+          payload: data
+        })
+      }
 
   const values = {
     products: state.products,
@@ -156,9 +176,12 @@ const ProductContexProvider = ({ children }) => {
     getProductDetails,
     deleteProduct,
     saveEditedProduct,
-    // fetchByParams,
-    // searchFilter,
-    getCategory
+    fetchByParams,
+    searchFilter,
+    getCategory,
+    setPage,
+    page,
+    count
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>
