@@ -18,7 +18,9 @@ export default function ProductCard({ item }) {
 
   const { deleteProduct } = useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
+
   
+
   
 
   return (

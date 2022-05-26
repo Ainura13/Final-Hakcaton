@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { render } from 'react-dom'
 import { Form, Field } from 'react-final-form'
@@ -9,11 +10,6 @@ import {
   formatExpirationDate
 } from './cardUtils'
 import Styles from './Styles'
-
-
-
-
-
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -101,3 +97,4 @@ const Payment = () => (
 )
 
 export default Payment;
+
