@@ -4,7 +4,6 @@ import MainPage from '../components/mainpage/MainPage';
 const HomePage = () => {
   return (
     <div>
-      HomePage
       <MainPage />
     </div>
   );

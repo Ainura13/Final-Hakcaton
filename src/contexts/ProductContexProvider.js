@@ -35,30 +35,26 @@ const ProductContexProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const [page, setPage] = useState(1)
-  
+  const [count, setCount] = useState(1)
+   
 
   
 
   const getProducts = async () => {
-    const { data } = await axios(
-      `${API}products/`
-    );
-    
+    const { data } = await axios(`${API}products/?page=${page}`)
+    setCount(Math.ceil(data.count / 6))
 
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
-      payload: data.results,
-    });
-    // console.log(data);
-    // console.log(data.results)
-  };
+      payload: data
+    })
+  }
 
   const getCategory = async () => {
 
     const { data } = await axios(
       `${API}category/`
     );
-    // console.log(data)
 
     dispatch({
       type: ACTIONS.GET_CATEGORY,
@@ -97,7 +93,9 @@ const ProductContexProvider = ({ children }) => {
 
     dispatch({
       type: ACTIONS.GET_PRODUCT_DETAILS,
-      payload: data.results,
+
+      payload: data
+
     });
   };
 
@@ -117,7 +115,8 @@ const ProductContexProvider = ({ children }) => {
     let id = newEditProducts.get('id')
     console.log(id);
 
-    await axios.patch(`${API}products/${id}/`, newEditProducts, config);
+
+    await axios.patch(`${API}products/${newProduct.id}/`, newEditProducts, config);
 
     getProducts();
   };
@@ -128,45 +127,55 @@ const ProductContexProvider = ({ children }) => {
     const config = {
       headers: {'Content-Type':'multipart/form-data', 'Authorization': `Bearer ${token.access}` }
     }
-    await axios.delete(`${API}products/${id}`, config);
+    await axios.delete(`${API}products/${id}/`, config);
     getProducts();
   };
 
-  // //filter
-  // const fetchByParams = async (query, value) => {
+  
 
-  //   if (value === 'all') {
-  //     getProducts()
-  //   } else {
-  //     const { data } = await axios(`${API}filter/?${query}=${value}`)
-            
-  //     dispatch({
-  //       type: ACTIONS.GET_PRODUCTS,
-  //       payload: data
-  //     })
-  //   }
-  //     }
+  const fetchByParams = async(value)=>{
+    if(value==='all'){
+      getProducts()
+    }else{
+        
+      const { data } = await axios(`${API}?speciality=${value}`)
     
-      // const searchFilter = async(value)=>{
+      dispatch({
+        type: ACTIONS.GET_PRODUCTS,
+        payload: data
+      })
+    }
+      }
+    
+      const searchFilter = async(value)=>{
       
-      //   const { data } = await axios(`${API}search/?q=${value}`)
-      
-      //   dispatch({
-      //     type: ACTIONS.GET_PRODUCTS,
-      //     payload: data
-      //   })
-      // }
-
-
-  const searchFilter = async (value) => {
-    const { data } = await axios(`${API}search/?q=${value}`);
-
-    dispatch({
-      type: ACTIONS.GET_PRODUCTS,
-      payload: data,
-    });
-  };
-
+          const { data } = await axios(`${API}products/search/?q=${value}`)
+          
+          dispatch({
+              type: ACTIONS.GET_PRODUCTS,
+              payload: data
+            })
+            console.log(data);
+        
+    
+      }
+        
+          // const toogleLike = async(like)=>{
+        
+          //    let token = JSON.parse(localStorage.getItem('token'));
+          //    const Authorization = `Bearer ${token.access}`;
+         
+          //    const config ={
+          //      headers: {'Content-Type':'multipart/form-data',
+          //      Authorization: `Bearer ${token.access}`,
+         
+          //    },
+          //    };
+        
+          //    await axios(`${API}products/${id}/toggle_like/`,config)
+          //    getProducts()
+          // }
+  
   // const toogleLike = async (id) => {
   //   let token = JSON.parse(localStorage.getItem('token'));
   //   const Authorization = `Bearer ${token.access}`;
@@ -192,10 +201,13 @@ const ProductContexProvider = ({ children }) => {
     getProductDetails,
     deleteProduct,
     saveEditedProduct,
-
-    // fetchByParams,
-    // searchFilter,
-    getCategory
+    // toogleLike,
+    fetchByParams,
+    searchFilter,
+    getCategory,
+    setPage,
+    page,
+    count
 
   };
   return (

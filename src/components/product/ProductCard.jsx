@@ -16,20 +16,17 @@ import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
 
-  const {id} = useParams();
-  const { deleteProduct, getProductDetails } = useProducts();
+  const { deleteProduct } = useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
-
-  React.useEffect(()=>{
-    getProductDetails(id)
-  }, [])
+  
+  
 
   return (
     <Card sx={{ m: '1rem', maxWidth: 300 }}>
       <CardMedia
         component="img"
         height="400"
-        image={item.picture}
+        image={item.image}
         alt={item.name}
       onClick={()=>navigate(`/products/${item.id}`)}
       />
@@ -85,11 +82,8 @@ export default function ProductCard({ item }) {
             color={checkProductInCart(item.id) ? 'primary' : ''}
           />
         </IconButton>
-        {/* <ThumbUpAltIcon
-          sx={{ cursor: 'pointer' }}
-          onClick={() => toogleLike(item.id)}
-        />
-        {item.likes} */}
+        
+      
       </CardActions>
     </Card>
   );

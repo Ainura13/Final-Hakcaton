@@ -6,38 +6,30 @@ import { useProducts } from '../../contexts/ProductContexProvider';
 import ProductCard from './ProductCard';
 
 const ProductList = () => {
-  const { products, getProducts} = useProducts();
+  const { products, getProducts, page, setPage, count} = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     getProducts();
   }, []);
 
+    // console.log(products.results);
 
   useEffect(() => {
     getProducts();
-  }, [searchParams]);
+  }, [page, searchParams]);
 
   
-  const [page, setPage] = useState(1);
-  // const itemsPerPage = 6;
-  // const count = Math.ceil(products.length / itemsPerPage);
+
 
   const handleChange = (e, p) => {
     console.log(p);
     setPage(p);
   };
-  // pagination
-
-  // function currentData() {
-  //   const begin = (page - 1) * itemsPerPage;
-  //   const end = begin + itemsPerPage;
-  //   return products.slice(begin, end);
-  // }
-
+ 
   return (
     <>
-      <Grid item md={9}>
+      <Grid item md={10}>
         <Box
           sx={{
             display: 'flex',
@@ -47,16 +39,18 @@ const ProductList = () => {
           }}
         >
           {products ? (
-            products.map((item) => (
+            (products.results || products).map((item) => {
+              return <Box sx={{margin: '15px'}}>
               <ProductCard item={item} key={item.id} />
-            ))
+              </Box>
+        })
           ) : (
             <h2>Loading...</h2>
           )}
         </Box>
 
         <Pagination
-          // count={count}
+          count={count}
           variant="outlined"
           shape="rounded"
           onChange={handleChange}

@@ -28,12 +28,8 @@ const pages = [
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navbar = () => {
-
-
   const { user, checkAuth, logout } = useAuth();
   const navigate = useNavigate();
-
- 
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -60,7 +56,7 @@ const Navbar = () => {
     if (localStorage.getItem('token')) {
       checkAuth();
     }
-  }, [])
+  }, []);
 
   React.useEffect(() => {
     setCount(getCountProductsInCart);
@@ -123,7 +119,7 @@ const Navbar = () => {
                           sx={{
                             ml: 'auto',
                             my: 1,
-                            color: 'black',
+                            olor: 'black',
                             display: 'block',
                           }}
                         >
@@ -140,13 +136,7 @@ const Navbar = () => {
               noWrap
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-            >
-              <img
-                id="logo"
-                src="https://demo.xpeedstudio.com/marketo/wp-content/uploads/2020/06/logo_3.png"
-                alt=""
-              />
-            </Typography>
+            ></Typography>
             <Box
               sx={{
                 justifyContent: 'center',
@@ -172,19 +162,6 @@ const Navbar = () => {
               ))}
             </Box>
 
-            <Link to="/favourit">
-              <Button sx={{ my: 2, color: 'black' }}>
-                <Badge
-                  badgeContent={count}
-                  color="primary"
-                  sx={{ mr: '10px', mt: '5px' }}
-                >
-                  <FavoriteIcon
-                    sx={{ fontSize: '30px', mt: '5px', mr: '5px' }}
-                  />
-                </Badge>
-              </Button>
-            </Link>
 
             <Link to="/cart">
               <Button sx={{ my: 2, color: 'black' }}>
@@ -199,38 +176,31 @@ const Navbar = () => {
             </Link>
 
             {user ? (
-            <Button
-              color="inherit"
-              sx={{ color: 'white' }}
-              onClick={() => {
-                logout();
-                navigate('/login');
-              }}
-            >
-              Logout
-            </Button>
-          ) : (
-            <>
-              <NavLink to="/login">
-                <Button color="inherit" sx={{ color: 'white' }}>
-                  Login
-                </Button>
-              </NavLink>
-
-              <NavLink to="/register">
-                <Button color="inherit" sx={{ color: 'white' }}>
-                  Register
-                </Button>
-              </NavLink>
-            </>
-          )}
-
-
-            <NavLink to="/register">
-              <Button color="inherit" sx={{ color: 'white' }}>
-                Register
+              <Button
+                color="inherit"
+                sx={{ color: 'white' }}
+                onClick={() => {
+                  logout();
+                  navigate('/login');
+                }}
+              >
+                Logout
               </Button>
-            </NavLink>
+            ) : (
+              <>
+                <NavLink to="/login">
+                  <Button color="inherit" sx={{ color: 'white' }}>
+                    Login
+                  </Button>
+                </NavLink>
+
+                <NavLink to="/register">
+                  <Button color="inherit" sx={{ color: 'white' }}>
+                    Register
+                  </Button>
+                </NavLink>
+              </>
+            )}
           </Toolbar>
         </Container>
       </AppBar>
