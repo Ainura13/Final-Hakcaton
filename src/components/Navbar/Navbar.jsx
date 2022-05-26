@@ -144,26 +144,12 @@ const Navbar = () => {
                 display: { xs: 'none', md: 'flex' },
               }}
             >
-              {pages.map((page) => (
-                <Link to={page.link} key={page.id}>
-                  <Button
-                    onClick={handleCloseNavMenu}
-                    sx={{
-                      ml: 'auto',
-                      my: 2,
-                      color: 'black',
-                      display: 'block',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    {page.name}
-                  </Button>
-                </Link>
-              ))}
-            </Box>
 
 
-            <Link to="/cart">
+        
+          <Link to="/cart">
+
+
               <Button sx={{ my: 2, color: 'black' }}>
                 <Badge
                   badgeContent={count}

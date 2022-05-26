@@ -10,6 +10,7 @@ import FormLabel from '@mui/material/FormLabel';
 import { useProducts } from '../../contexts/ProductContexProvider';
 
 const SideBar = () => {
+
   
 const { fetchByParams, searchFilter } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();

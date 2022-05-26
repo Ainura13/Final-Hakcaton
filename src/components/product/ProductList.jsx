@@ -21,12 +21,11 @@ const ProductList = () => {
 
   
 
-
   const handleChange = (e, p) => {
     console.log(p);
     setPage(p);
   };
- 
+
   return (
     <>
       <Grid item md={10}>

@@ -40,7 +40,24 @@ const ProductContexProvider = ({ children }) => {
 
   
 
+
   const getProducts = async () => {
+    const { data } = await axios(`${API}products/?page=${page}`)
+    setCount(Math.ceil(data.count / 6))
+
+
+  //   dispatch({
+  //     type: ACTIONS.GET_PRODUCTS,
+  //     payload: data.results,
+  //   });
+  //   // console.log(data);
+  //   // console.log(data.results)
+  // };
+
+  const getProducts = async () => {
+    // let loc=location.pathname
+    // let url = `${loc}?page=${page}`
+    // navigate(url)
     const { data } = await axios(`${API}products/?page=${page}`)
     setCount(Math.ceil(data.count / 6))
 
@@ -48,6 +65,7 @@ const ProductContexProvider = ({ children }) => {
       type: ACTIONS.GET_PRODUCTS,
       payload: data
     })
+
   }
 
   const getCategory = async () => {
@@ -133,6 +151,7 @@ const ProductContexProvider = ({ children }) => {
 
   
 
+
   const fetchByParams = async(value)=>{
     if(value==='all'){
       getProducts()
@@ -176,6 +195,7 @@ const ProductContexProvider = ({ children }) => {
           //    getProducts()
           // }
   
+
   // const toogleLike = async (id) => {
   //   let token = JSON.parse(localStorage.getItem('token'));
   //   const Authorization = `Bearer ${token.access}`;
@@ -201,7 +221,9 @@ const ProductContexProvider = ({ children }) => {
     getProductDetails,
     deleteProduct,
     saveEditedProduct,
+
     // toogleLike,
+
     fetchByParams,
     searchFilter,
     getCategory,
