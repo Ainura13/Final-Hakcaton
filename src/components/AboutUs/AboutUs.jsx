@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Paper } from '@mui/material';
-import img1 from '../images/img2.jpg';
+import img1 from '../images/bed_clock.jpg';
 import Video from '../assets/video.mp4';
 
 function Copyright() {

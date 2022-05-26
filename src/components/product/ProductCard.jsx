@@ -16,9 +16,10 @@ import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
 
-  const {id} = useParams();
-  const { deleteProduct, getProductDetails } = useProducts();
+  const { deleteProduct } = useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
+
+  
 
   
 
@@ -83,11 +84,8 @@ export default function ProductCard({ item }) {
             color={checkProductInCart(item.id) ? 'primary' : ''}
           />
         </IconButton>
-        {/* <ThumbUpAltIcon
-          sx={{ cursor: 'pointer' }}
-          onClick={() => toogleLike(item.id)}
-        />
-        {item.likes} */}
+        
+      
       </CardActions>
     </Card>
   );

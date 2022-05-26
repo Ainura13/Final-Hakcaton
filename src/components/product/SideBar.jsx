@@ -10,26 +10,27 @@ import FormLabel from '@mui/material/FormLabel';
 import { useProducts } from '../../contexts/ProductContexProvider';
 
 const SideBar = () => {
-  const { fetchByParams } = useProducts();
-  const [searchParams, setSearchParams] = useSearchParams();
 
+  
+const { fetchByParams, searchFilter } = useProducts();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get('q') || '');
 
-  useEffect(() => {
-    setSearchParams({
-      q: search,
-    });
-  }, [search]);
+  // useEffect(() => {
+  //   setSearchParams({
+  //     q: search,
+  //   });
+  // }, [search]);
 
   return (
-    <Grid item md={3}>
+    <Grid item md={2}>
       <Paper elevation={5} sx={{ p: 2 }}>
         <TextField
           fullWidth
           id="input-with-icon-textfield"
           label="Search..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          // value={search}
+          onChange={(e) => searchFilter(e.target.value)}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -41,65 +42,37 @@ const SideBar = () => {
         />
 
         <Grid>
-          <FormControl>
-            <FormLabel id="demo-radio-buttons-group-label">Type</FormLabel>
-            <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="all"
-              name="radio-buttons-group"
-              onChange={(e) => fetchByParams('type', e.target.value)}
-            >
-              <FormControlLabel value="all" control={<Radio />} label="all" />
-
-              <FormControlLabel
-                value="Home decoration"
-                control={<Radio />}
-                label="Home decoration"
-              />
-
-              <FormControlLabel
-                value="Mirrors"
-                control={<Radio />}
-                label="Mirrors"
-              />
-
-              <FormControlLabel
-                value="Picture"
-                control={<Radio />}
-                label="watch"
-              />
-            </RadioGroup>
-          </FormControl>
-        </Grid>
-
         <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label">Price</FormLabel>
+          <FormLabel id="demo-radio-buttons-group-label">Made In</FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="all"
             name="radio-buttons-group"
-            onChange={(e) => fetchByParams('price_lte', e.target.value)}
+            onChange={(e) => fetchByParams(e.target.value)}
           >
             <FormControlLabel value="all" control={<Radio />} label="all" />
             <FormControlLabel
-              value="250"
+              value="USA"
               control={<Radio />}
-              label="less than 250$"
+              label="USA"
             />
 
             <FormControlLabel
-              value="500"
+              value="Russia"
               control={<Radio />}
-              label="less than 500$"
+              label="Russia"
             />
 
             <FormControlLabel
-              value="1000"
+              value="China"
               control={<Radio />}
-              label="less than 1000$"
+              label="China"
             />
           </RadioGroup>
         </FormControl>
+        </Grid>
+
+     
       </Paper>
     </Grid>
   );

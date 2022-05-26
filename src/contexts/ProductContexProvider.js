@@ -40,11 +40,11 @@ const ProductContexProvider = ({ children }) => {
 
   
 
-  // const getProducts = async () => {
-  //   const { data } = await axios(
-  //     `${API}products/`
-  //   );
-    
+
+  const getProducts = async () => {
+    const { data } = await axios(`${API}products/?page=${page}`)
+    setCount(Math.ceil(data.count / 6))
+
 
   //   dispatch({
   //     type: ACTIONS.GET_PRODUCTS,
@@ -65,7 +65,7 @@ const ProductContexProvider = ({ children }) => {
       type: ACTIONS.GET_PRODUCTS,
       payload: data
     })
-    console.log(data);
+
   }
 
   const getCategory = async () => {
@@ -73,7 +73,6 @@ const ProductContexProvider = ({ children }) => {
     const { data } = await axios(
       `${API}category/`
     );
-    // console.log(data)
 
     dispatch({
       type: ACTIONS.GET_CATEGORY,
@@ -146,50 +145,56 @@ const ProductContexProvider = ({ children }) => {
     const config = {
       headers: {'Content-Type':'multipart/form-data', 'Authorization': `Bearer ${token.access}` }
     }
-    await axios.delete(`${API}products/${id}`, config);
+    await axios.delete(`${API}products/${id}/`, config);
     getProducts();
   };
 
   
 
-  //filter
-  const fetchByParams = async (query, value) => {
 
-    if (value === 'all') {
+  const fetchByParams = async(value)=>{
+    if(value==='all'){
       getProducts()
-    } else {
-      const { data } = await axios(`${API}filter/?${query}=${value}`)
-            
+    }else{
+        
+      const { data } = await axios(`${API}?speciality=${value}`)
+    
       dispatch({
         type: ACTIONS.GET_PRODUCTS,
         payload: data
       })
     }
       }
-
-
-      //Search
-
     
       const searchFilter = async(value)=>{
       
-        const { data } = await axios(`${API}search/?q=${value}`)
-      
-        dispatch({
-          type: ACTIONS.GET_PRODUCTS,
-          payload: data
-        })
+          const { data } = await axios(`${API}products/search/?q=${value}`)
+          
+          dispatch({
+              type: ACTIONS.GET_PRODUCTS,
+              payload: data
+            })
+            console.log(data);
+        
+    
       }
-
-
-  const searchFilter = async (value) => {
-    const { data } = await axios(`${API}search/?q=${value}`);
-
-    dispatch({
-      type: ACTIONS.GET_PRODUCTS,
-      payload: data,
-    });
-  };
+        
+          // const toogleLike = async(like)=>{
+        
+          //    let token = JSON.parse(localStorage.getItem('token'));
+          //    const Authorization = `Bearer ${token.access}`;
+         
+          //    const config ={
+          //      headers: {'Content-Type':'multipart/form-data',
+          //      Authorization: `Bearer ${token.access}`,
+         
+          //    },
+          //    };
+        
+          //    await axios(`${API}products/${id}/toggle_like/`,config)
+          //    getProducts()
+          // }
+  
 
   // const toogleLike = async (id) => {
   //   let token = JSON.parse(localStorage.getItem('token'));
@@ -216,6 +221,8 @@ const ProductContexProvider = ({ children }) => {
     getProductDetails,
     deleteProduct,
     saveEditedProduct,
+
+    // toogleLike,
 
     fetchByParams,
     searchFilter,
