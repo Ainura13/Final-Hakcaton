@@ -1,0 +1,141 @@
+{
+  "products": [
+    {
+      "name": "White vase",
+      "description": "qwertyy",
+      "price": 415,
+      "picture": "https://images.pexels.com/photos/4207892/pexels-photo-4207892.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "type": "Home decoration",
+      "id": 1
+    },
+    {
+      "name": "Picture",
+      "description": "" ,
+      "price": 150,
+      "picture": "https://images.pexels.com/photos/534172/pexels-photo-534172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "type": "Home decoration",
+      "id": 2
+    },
+    {
+      "name": "Picture",
+      "description": "" ,
+      "price": 950,
+      "picture": "https://images.pexels.com/photos/2249959/pexels-photo-2249959.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "type": "Home decoration",
+      "id": 3
+    },
+    {
+      "name": "Chandelier",
+      "description": "" ,
+      "price": 380,
+      "picture": "https://images.pexels.com/photos/1370763/pexels-photo-1370763.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "type": "Home decoration",
+      "id": 4
+    },
+    {
+      "name": "Chandelier",
+      "description": "" ,
+      "price": 450,
+      "picture": "https://images.pexels.com/photos/1841143/pexels-photo-1841143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "type": "Home decoration",
+      "id": 5
+    },
+    {
+      "name": "Vase",
+      "description": "" ,
+      "price": 180,
+      "picture": "https://images.pexels.com/photos/879821/pexels-photo-879821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "type": "Home decoration",
+      "id": 6
+    },
+    {
+      "name": "Shelves",
+      "description": "" ,
+      "price": 550,
+      "picture": "https://images.pexels.com/photos/4913367/pexels-photo-4913367.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "type": "Home decoration",
+      "id": 7
+    },
+    {
+      "name": "Chandelier",
+      "description": "" ,
+      "price": 314,
+      "picture": "https://images.pexels.com/photos/1008692/pexels-photo-1008692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "type": "Home decoration",
+      "id": 8
+    },
+    {
+      "name": "Picture",
+      "description": "" ,
+      "price": 292,
+      "picture": "https://images.pexels.com/photos/3747439/pexels-photo-3747439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "type": "Home decoration",
+      "id": 9
+    },
+    {
+      "name": "Blue wall plate",
+      "description": "" ,
+      "price": 164,
+      "picture": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ed-best-decor-alex-papachristidis-1510956958.jpg?crop=1.00xw:0.666xh;0,0.178xh&resize=980:*",
+      "type": "Home decoration",
+      "id": 10
+    },
+    {
+      "name": "Blue wall plate",
+      "description": "" ,
+      "price": 150,
+      "picture": "https://images.unsplash.com/photo-1513716875652-59c99449ee70?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=372",
+      "type": "Mirrors",
+      "id": 11
+    },
+    {
+      "name": "Lots of mirrors",
+      "description": "" ,
+      "price": 200,
+      "picture": "https://images.unsplash.com/photo-1595455967759-5f1356993e53?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
+      "type": "Mirrors",
+      "id": 12
+    },
+
+    {
+      "name": "Decor mirror",
+      "description": "" ,
+      "price": 300,
+      "picture": "https://images.unsplash.com/photo-1612392549429-a874f09c65f1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=342",
+      "type": "Mirrors",
+      "id": 13
+    },
+    {
+      "name": "Round mirror",
+      "description": "" ,
+      "price": 500,
+      "picture": "https://images.unsplash.com/photo-1556020685-ae41abfc9365?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
+      "type": "Mirrors",
+      "id": 14
+    },
+    {
+      "name": "Only mirror",
+      "description": "" ,
+      "price": 600,
+      "picture": "https://images.pexels.com/photos/5793655/pexels-photo-5793655.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "type": "Mirrors",
+      "id": 15
+    },
+    {
+      "name": "Dark mirror",
+      "description": "" ,
+      "price": 300,
+      "picture": "https://img.freepik.com/free-photo/modern-luxury-authentic-dining-room-interior-design-with-picture-frame_53876-129841.jpg?t=st=1653029814~exp=1653030414~hmac=62c0f99be74a5b0600ec411be6baa94203aa2820d86f60304bdfa59d5ceeef6b&w=996",
+      "type": "Mirrors",
+      "id": 16
+    },
+    {
+      "name": "Only mirror",
+      "description": "" ,
+      "price": 400,
+      "picture": "https://images.pexels.com/photos/2207894/pexels-photo-2207894.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "type": "Mirrors",
+      "id": 17
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.aae899e8.css",
+    "main.js": "/static/js/main.e5595395.js",
+    "static/media/video.mp4": "/static/media/video.16d8a4dfa44f10e639f6.mp4",
+    "static/media/bed_vase.webp": "/static/media/bed_vase.d26d676a12dc0c6b3644.webp",
+    "static/media/bed_clock.jpg": "/static/media/bed_clock.c23ae13de7a678a08222.jpg",
+    "index.html": "/index.html",
+    "main.aae899e8.css.map": "/static/css/main.aae899e8.css.map",
+    "main.e5595395.js.map": "/static/js/main.e5595395.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aae899e8.css",
+    "static/js/main.e5595395.js"
+  ]
+}
